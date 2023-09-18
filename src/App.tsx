@@ -1,9 +1,16 @@
+import { Header } from "./components/header";
+import styles from './App.module.css';
+import './global.css';
+import { TodoInput } from "./components/todoInput";
 
 function App() {
 
   return (
     <>
-      <h1>Desafio 01</h1>
+     <Header />
+     <div className={styles.wrapper}>
+        <TodoInput />
+     </div>
     </>
   )
 }

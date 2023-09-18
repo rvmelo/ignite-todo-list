@@ -1,0 +1,7 @@
+.wrapper {
+    display: flex;
+    flex: 1;
+    height: 200px;
+    width: 100%;
+    background-color: var(--gray-600);
+}

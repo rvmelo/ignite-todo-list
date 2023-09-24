@@ -5,10 +5,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    position: absolute;
 }
 
 .todoForm {
     display: flex;
+    position: relative;
+    bottom: 115px;
 }
 
 .todoForm img[itemType='logo'] {
@@ -32,7 +35,6 @@
     background: var(--blue-dark);
     color: var(--white); 
     font-size: 0.875rem;
-    font-family: 'Inter';
     font-weight: 400;
     padding: 16px;
     border-radius: 8px;

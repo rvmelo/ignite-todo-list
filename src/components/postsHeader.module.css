@@ -1,0 +1,51 @@
+.postsInfoContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.taskLeftInfoContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.taskLeftInfoText {
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-right: 8px;
+}
+
+.numberWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    background-color: var(--gray-400);
+    border-radius: 999px;
+}
+
+.numberInfoText {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.taskRightInfoContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.taskRightInfoText {
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-right: 8px;
+}

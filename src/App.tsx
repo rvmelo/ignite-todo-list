@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import './global.css';
 import { TodoInput } from "./components/todoInput";
 import { PostsHeader } from "./components/postsHeader";
+import { Post } from "./components/post";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <TodoInput />
         <div className={styles.postsWrapper}>
           <PostsHeader />
+          <Post />
         </div>
      </div>
     </>

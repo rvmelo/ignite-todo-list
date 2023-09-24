@@ -1,0 +1,22 @@
+.postWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--gray-400);
+   
+}
+
+.postText {
+    color: var(--gray-100);
+    font-size: 0.875rem;
+    font-weight: 400;
+    display: flex;
+    margin: 0 22px;
+    line-height: 1.225rem;
+}
+
+.postCheckBox {
+    border-radius: 8px;
+}

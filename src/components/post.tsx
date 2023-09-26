@@ -1,15 +1,51 @@
-import React from 'react';
+import React, { SetStateAction } from 'react';
 import trash from '../assets/trash.svg';
 import styles from './post.module.css';
+import { PostData } from '../App';
 
-const Post: React.FC = () => {
+interface Props {
+  post: PostData;
+  setPosts: React.Dispatch<SetStateAction<PostData[]>>
+}
+
+
+const Post: React.FC<Props> = ({ post, setPosts }) => {
+
+  const handleClick = (checked: boolean) => {
+    setPosts(prev => {
+
+      const auxPosts = [...prev];
+
+      const postIndex = auxPosts.findIndex(postItem => postItem.id === post.id);
+
+      if (postIndex !== -1) {
+        auxPosts[postIndex].checked = !checked;
+      }
+
+      return [...auxPosts];
+    });
+  }
+
+  const handleRemovePost = (postId: string) => {
+    setPosts(prev => prev.filter(postItem => postItem.id !== postId));
+  }
+
   return (
     <div className={styles.postWrapper}>
-      <input className={styles.postCheckBox} type="checkbox" checked />
-      <span className={styles.postText}>
-        Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
-      </span>
-      <img itemType='logo' src={trash} alt="Deletar tarefa"/>
+
+        <input 
+          onClick={() => handleClick(post.checked)} 
+          className={styles.postCheckBox} 
+          type="checkbox" 
+          checked={post.checked} 
+          onChange={e => e}
+        />
+
+      <div className={styles.postTextWrapper}>
+        <span className={styles.postText}>{post.text}</span>
+      </div>
+
+      <img onClick={() => handleRemovePost(post.id)} itemType='logo' src={trash} alt="Deletar tarefa"/>
     </div>
   );
 }

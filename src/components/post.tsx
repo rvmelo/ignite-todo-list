@@ -35,17 +35,16 @@ const Post: React.FC<Props> = ({ post, setPosts }) => {
 
         <input 
           onClick={() => handleClick(post.checked)} 
-          className={styles.postCheckBox} 
           type="checkbox" 
           checked={post.checked} 
           onChange={e => e}
         />
 
       <div className={styles.postTextWrapper}>
-        <span className={styles.postText}>{post.text}</span>
+        <span className={post.checked ? styles.postSelectedText : styles.postText}>{post.text}</span>
       </div>
 
-      <img onClick={() => handleRemovePost(post.id)} itemType='logo' src={trash} alt="Deletar tarefa"/>
+      <img onClick={() => handleRemovePost(post.id)} itemType='logo' src={trash} alt="Deletar tarefa" />
     </div>
   );
 }
